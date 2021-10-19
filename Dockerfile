@@ -11,3 +11,6 @@ RUN yum -y update
 RUN yum -y install nginx
 
 ENTRYPOINT ["/usr/sbin/nginx", "-g", "daemon off;"]
+EXPOSE 1234:80
+CMD service apache2 start
+
