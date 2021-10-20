@@ -10,7 +10,8 @@ RUN yum -y install epel-release
 RUN yum -y update
 RUN yum -y install nginx
 
-COPY /root/docker_images/WebSite/index.html /usr/share/nginx/html
+#COPY /root/docker_images/WebSite/index.html /usr/share/nginx/html
+COPY --from=node /root/docker_images/WebSite/index.html /usr/share/nginx/html/
 
 ENTRYPOINT ["/usr/sbin/nginx", "-g", "daemon off;"]
 
