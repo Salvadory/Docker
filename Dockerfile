@@ -11,7 +11,7 @@ RUN yum -y update
 RUN yum -y install nginx
 
 #COPY /root/docker_images/WebSite/index.html /usr/share/nginx/html
-COPY --from=node  /root/docker_images/WebSite/. /usr/share/nginx/html/
+COPY --from=node  /root/docker_images/WebSite/ /usr/share/nginx/html/
 #COPY nginx/staging-default.conf /etc/nginx/conf.d/default.conf
 ENTRYPOINT ["/usr/sbin/nginx", "-g", "daemon off;"]
 
